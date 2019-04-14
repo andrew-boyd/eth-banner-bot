@@ -65,4 +65,4 @@ module.exports = (subreddit = 'ethtrader', context, callback) => {
   });
 };
 
-const KEYWORDS = ['!bannerbot']; //phrases or single words
+const KEYWORDS = ['!bannerbot'];
