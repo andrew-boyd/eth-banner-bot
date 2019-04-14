@@ -1,0 +1,18 @@
+{
+  "name": "ethbannerbot",
+  "version": "0.0.0",
+  "description": "",
+  "author": "boyd <andrew@boyd.dev>",
+  "main": "functions/__main__.js",
+  "dependencies": {},
+  "private": true,
+  "stdlib": {
+    "build": "faaslang",
+    "name": "boyd/ethbannerbot",
+    "timeout": 10000,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  }
+}
