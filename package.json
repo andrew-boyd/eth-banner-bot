@@ -1,5 +1,5 @@
 {
-  "name": "boyd/ethbannerbot",
+  "name": "ethbannerbot",
   "version": "0.0.1",
   "description": "Posts a link to the current r/ethtrader banner seen on new Reddit upon request",
   "author": "boyd",

@@ -30,9 +30,8 @@ module.exports = (subreddit = 'ethtrader', context, callback) => {
 
           let validComments = comments.filter(comment => {
             return KEYWORDS.some(keyword => {
-              let keywordRegex = '\\b' + keyword.replace(' ', '\\b \\b') + '\\b';
               return (
-                comment.body.match(keywordRegex) && !(comment.name in commentsRepliedTo)
+                comment.body.indexOf(keyword) !== -1 && !(comment.name in commentsRepliedTo)
               );
             });
           });
@@ -42,15 +41,18 @@ module.exports = (subreddit = 'ethtrader', context, callback) => {
               return comment.body.includes(KEYWORDS[index]);
             });
 
-            return lib[`${context.service.identifier}.reply`](
-              comment.name,
-              response + SIGNATURE
-            ).then(result => {
+            // return callback(null, [comment.name, response])
+
+            return lib[`${context.service.identifier}.reply`]({
+              'parent': comment.name,
+              'text': response
+            }).then(result => {
               return result;
             });
           });
 
           return Promise.all(replyPromises).then(results => {
+            // return callback(null, results)
             results.map(result => {
               commentsRepliedTo[result.parent_id] = true;
             });
@@ -71,4 +73,3 @@ const KEYWORDS = ['!bannerbot']; //phrases or single words
 const RESPONSES = [
   "successful connection made."
 ]; // response for the keyword with the same index
-const SIGNATURE = ``; // attached to the end of every comment
