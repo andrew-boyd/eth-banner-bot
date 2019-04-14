@@ -7,10 +7,6 @@ const lib = require('lib')({ token: process.env.STDLIB_TOKEN });
 * @returns {any}
 */
 module.exports = (score, context, callback) => {
-  if (context.user && context.user.username !== context.service.path[0]) {
-    return callback(new Error('Invalid library token'));
-  }
-
   reddit
     .getUser(process.env.REDDIT_USERNAME)
     .getComments()

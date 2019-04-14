@@ -6,10 +6,6 @@ const reddit = require('../reddit');
 * @returns {any}
 */
 module.exports = (postID, context, callback) => {
-  if (context.user && context.user.username !== context.service.path[0]) {
-    return callback(new Error('Invalid library token'));
-  }
-
   if (postID.startsWith('t1_')) {
     reddit
       .getComment(postID)

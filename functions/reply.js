@@ -7,10 +7,6 @@ const reddit = require('../reddit');
 * @returns {any}
 */
 module.exports = (parent, text, context, callback) => {
-  if (context.user && context.user.username !== context.service.path[0]) {
-    return callback(new Error('Invalid library token'));
-  }
-
   if (parent.startsWith('t1_')) {
     reddit
       .getComment(parent)

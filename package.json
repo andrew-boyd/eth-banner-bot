@@ -1,11 +1,14 @@
 {
   "name": "ethbannerbot",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Posts a link to the current r/ethtrader banner seen on new Reddit upon request",
   "author": "boyd",
   "main": "functions/__main__.js",
   "dependencies": {
+    "jsdom": "^14.0.0",
     "lib": "^3.0.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "snoowrap": "^1.14.2"
   },
   "private": true,
