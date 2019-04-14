@@ -1,18 +1,26 @@
 {
-  "name": "ethbannerbot",
-  "version": "0.0.0",
-  "description": "",
-  "author": "boyd <andrew@boyd.dev>",
+  "name": "boyd/ethbannerbot",
+  "version": "0.0.1",
+  "description": "Posts a link to the current r/ethtrader banner seen on new Reddit upon request",
+  "author": "boyd",
   "main": "functions/__main__.js",
-  "dependencies": {},
+  "dependencies": {
+    "lib": "^3.0.1",
+    "snoowrap": "^1.14.2"
+  },
   "private": true,
   "stdlib": {
     "build": "faaslang",
     "name": "boyd/ethbannerbot",
     "timeout": 10000,
+    "publish": true,
     "personalize": {
       "keys": [],
-      "user": []
-    }
-  }
+      "user": [
+        "ethbannerbot"
+      ]
+    },
+    "source": "@steve/reddit-bot/0.1.7"
+  },
+  "devDependencies": {}
 }
