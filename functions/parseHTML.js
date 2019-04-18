@@ -9,9 +9,9 @@ const { JSDOM } = jsdom;
 module.exports = (url, context, callback) => {
   return parsedContent = new Promise((resolve, reject) => {
     rp(url).then(function(dom) {
-      let regex = /(?<=--newCommunityTheme-banner-backgroundImage: )(.*?)(;)/g;
+      let regex = /(?<=--newCommunityTheme-banner-backgroundImage: )(.*?)(jpg|jpeg|png|webp|gif)/g;
       let url = dom.match(regex)
-      callback(null, url[0].slice(0, -1))
+      callback(null, url[0])
     });
   })
 };

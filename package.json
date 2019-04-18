@@ -1,6 +1,6 @@
 {
   "name": "ethbannerbot",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Posts a link to the current r/ethtrader banner seen on new Reddit upon request",
   "author": "boyd",
   "main": "functions/__main__.js",
